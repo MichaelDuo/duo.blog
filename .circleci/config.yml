@@ -13,8 +13,33 @@ jobs:
           name: Build files
           command: npm run build
       - run:
+          name: Config git
+          command: |
+            git config --global user.email "michaeldong21@gmail.com"
+            git config --global user.name "Bot"
+      - run:
           name: Deploy
           command: node scripts/deploy
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build-deploy
+
+# version: 2
+# jobs:
+#   build:
+#     docker:
+#       - image: circleci/node:10.13.0
+#     steps:
+#       - checkout
+#       - setup_remote_docker
+#       - run:
+#           name: Install packages
+#           command: npm install
+#       - run:
+#           name: Build files
+#           command: npm run build
 #       - persist_to_workspace:
 #           root: .
 #           paths:
@@ -38,14 +63,14 @@ jobs:
 #           command: |
 #             . venv/bin/activate
 #             aws s3 sync workspace/build s3://$BUCKET_NAME --delete
-workflows:
-  version: 2
-  build-deploy:
-    jobs:
-      - build-deploy
-      # - deploy:
-      #     requires:
-      #       - build
-      #     filters:
-      #       branches:
-      #         only: master
+# workflows:
+#   version: 2
+#   build-deploy:
+#     jobs:
+#       - build
+#       - deploy:
+#           requires:
+#             - build
+#           filters:
+#             branches:
+#               only: master
