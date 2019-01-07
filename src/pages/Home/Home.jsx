@@ -3,7 +3,7 @@ import React from 'react';
 export default function Home(){
     return (
         <div>
-            <h1>HomePage</h1>
+            <h1>MichaelDuo's Blog</h1>
             <ul uk-accordion="true">
                 <li className="uk-open">
                     <a className="uk-accordion-title" href="#">Item 1</a>

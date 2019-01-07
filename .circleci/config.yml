@@ -26,6 +26,7 @@ workflows:
     jobs:
       - build-deploy
 
+# S3 deployment config
 # version: 2
 # jobs:
 #   build:
