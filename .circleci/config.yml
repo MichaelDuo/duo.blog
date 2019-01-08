@@ -15,8 +15,8 @@ jobs:
       - run:
           name: Config git
           command: |
-            git config --global user.email "michaeldong21@gmail.com"
-            git config --global user.name "Bot"
+            git config --global user.email "michaeldong21@gmail.com" # TODO: Move to env variable
+            git config --global user.name "Bot" # TODO: Move to env variable
       - run:
           name: Deploy
           command: node scripts/deploy
