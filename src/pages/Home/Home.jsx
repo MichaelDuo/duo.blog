@@ -1,5 +1,5 @@
 import React from 'react';
-import Tabs from 'components/Tabs';
+import Tab from 'components/Tab';
 import Routes from './Routes';
 
 const tabs = [
@@ -25,7 +25,7 @@ export default function Home(){
         <div>
             <div className="uk-container uk-margin-top uk-margin-bottom">
                 <h1>MichaelDuo</h1>
-                <Tabs tabs={tabs} onSelect={(index)=>console.log(index)}/>
+                <Tab tabs={tabs}/>
                 <Routes/>
             </div>
         </div>
