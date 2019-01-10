@@ -13,7 +13,7 @@ function resourceReducers(resources){
 const defaultResourceState = {
     loading: false,
     updating: [],
-    data: null
+    data: undefined
 }
 
 function makeResourceReducer(resource){

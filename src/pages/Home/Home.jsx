@@ -24,9 +24,13 @@ export default function Home(){
     return (
         <div>
             <div className="uk-container uk-margin-top uk-margin-bottom">
-                <h1>MichaelDuo</h1>
+                <div className="uk-text-large uk-margin-bottom uk-margin-top">
+                    MichaelDuo
+                </div>
                 <Tab tabs={tabs}/>
-                <Routes/>
+                <div className="uk-margin-top">
+                    <Routes/>
+                </div>
             </div>
         </div>
     )

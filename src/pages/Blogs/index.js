@@ -1,10 +1,8 @@
 import {connect} from 'react-redux'
-import {set} from 'actions/resources'
+import {loadBlogs} from 'actions/blogs'
 import {BLOGS} from 'constants/resources'
 import Blogs from './Blogs'
 import {getResource} from 'selectors/resources'
-
-const blogs = process.env.BLOGS
 
 const mapStateToProps = (state) => {
     return {
@@ -13,7 +11,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-    loadBlogs: () => set(BLOGS)(blogs)
+    loadBlogs
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Blogs)

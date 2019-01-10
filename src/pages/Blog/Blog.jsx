@@ -1,21 +1,34 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
+import showdown from 'showdown'
+
+const converter = new showdown.Converter()
 
 export default class Blog extends PureComponent {
   static propTypes = {
     id: PropTypes.string.isRequired,
-    fetchBlog: PropTypes.func.isRequired
+    blog: PropTypes.object,
+    loadBlog: PropTypes.func.isRequired
+  }
+  
+  static defaultProps = {
+    blog: { }
   }
 
   componentDidMount(){
-    const {fetchBlog, id} = this.props
-    fetchBlog(id)
+    const {loadBlog, id} = this.props
+    loadBlog(id)
   }
 
   render(){
+    const content = this.props.blog.content
+    const contentHtml = converter.makeHtml(content)
     return (
       <div>
-        Blog Post {this.props.id}
+        <div 
+          className="blog-post uk-padding uk-padding-remove-top" 
+          dangerouslySetInnerHTML={{__html: contentHtml}}
+        />
       </div>
     )
   }

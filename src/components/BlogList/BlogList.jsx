@@ -6,11 +6,11 @@ function getBlogListItem(blog){
     const blogUrl = `/blog/${blog.id}`
     return (
         <div className="uk-margin-top" key={blog.id}>
-            <h2 className="uk-heading-bullet">
+            <h3 className="uk-heading-bullet">
                 <Link to={blogUrl} className="uk-link-text">
                     {blog.title}
                 </Link>
-            </h2>
+            </h3>
             <div className="uk-margin-left">
                 <div className="uk-margin-bottom">
                     <Link to={blogUrl} className="uk-link-reset uk-text-muted">

@@ -1,14 +1,32 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 import './styles/App.css';
 import Pages from 'pages'
 import { HashRouter as Router } from 'react-router-dom'
+import {connect} from 'react-redux'
+import {loadBlogs} from 'actions/blogs'
+import PropTypes from 'prop-types'
 
-export default function App(){
-  return (
-    <Router>
-      <div className="App">
-        <Pages />
-      </div>
-    </Router>
-  )
+const mapDispatchToProps = {
+  loadBlogs
 }
+class App extends PureComponent {
+  static propTypes = {
+    loadBlogs: PropTypes.func.isRequired
+  }
+
+  componentWillMount(){
+    this.props.loadBlogs()
+  }
+
+  render(){
+    return (
+      <Router>
+        <div className="App">
+          <Pages />
+        </div>
+      </Router>
+    )
+  }
+}
+
+export default connect(null, mapDispatchToProps)(App)
