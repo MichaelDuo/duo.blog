@@ -24,7 +24,7 @@ export default function Home(){
     return (
         <div>
             <div className="uk-container uk-margin-top uk-margin-bottom">
-                <div className="uk-text-large uk-margin-bottom uk-margin-top">
+                <div className="uk-text-large uk-margin-bottom">
                     MichaelDuo
                 </div>
                 <Tab tabs={tabs}/>

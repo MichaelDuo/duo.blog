@@ -26,7 +26,7 @@ export default class Blog extends PureComponent {
     return (
       <div>
         <div 
-          className="blog-post uk-padding uk-padding-remove-top" 
+          className="blog-post" 
           dangerouslySetInnerHTML={{__html: contentHtml}}
         />
       </div>
