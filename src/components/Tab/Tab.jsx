@@ -12,8 +12,8 @@ function Tab({tabs, onSelect, history} ){
 
     const getTab = (tab, index) => {
         return (
-            <li key={`${index}-${tab.id}`}>
-                <a href="" onClick={() => onTabClick(index)}>{tab.name}</a>
+            <li onClick={() => onTabClick(index)} key={`${index}-${tab.id}`}>
+                <a href="">{tab.name}</a>
             </li>
         )
     }
