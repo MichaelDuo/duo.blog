@@ -14,7 +14,7 @@ function getBlogListItem(blog){
             <div className="uk-margin-left">
                 <div className="uk-margin-bottom">
                     <Link to={blogUrl} className="uk-link-reset uk-text-muted">
-                        {blog.title} This will be description, This will be description, This will be description, This will be description, This will be description, This will be description, This will be description, This will be description.
+                        {blog.preview}
                     </Link>
                 </div>
                 <Link to={blogUrl}>Read more</Link>
