@@ -1,28 +1,31 @@
-import React from 'react'
+import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import {withRouter} from 'react-router'
 
-function Tab({tabs, onSelect, history} ){
-    const path = history.location.pathname
-    const activeTabIndex = tabs.findIndex(tab=>path === tab.url)
-    const onTabClick = (index) => {
-        history.push(tabs[index].url)
-        onSelect(index)
-    }
+class Tab extends PureComponent {
+    render(){
+        const {tabs, onSelect, history} = this.props
+        const path = history.location.pathname
+        const activeTabIndex = tabs.findIndex(tab=>path === tab.url)
+        const onTabClick = (index) => {
+            history.push(tabs[index].url)
+            onSelect(index)
+        }
 
-    const getTab = (tab, index) => {
+        const getTab = (tab, index) => {
+            return (
+                <li onClick={() => onTabClick(index)} key={`${index}-${tab.id}`}>
+                    <a href="">{tab.name}</a>
+                </li>
+            )
+        }
+    
         return (
-            <li onClick={() => onTabClick(index)} key={`${index}-${tab.id}`}>
-                <a href="">{tab.name}</a>
-            </li>
+            <div uk-tab={`active: ${activeTabIndex}`} className="uk-flex-right">
+                {tabs.map((tab, index)=>getTab(tab, index))}
+            </div>
         )
     }
-    
-    return (
-        <div uk-tab={`active: ${activeTabIndex}`} className="uk-flex-right">
-            {tabs.map((tab, index)=>getTab(tab, index))}
-        </div>
-    )
 }
 
 Tab.propTypes = {

@@ -1,6 +1,7 @@
 import React from 'react';
 import Tab from 'components/Tab';
 import Routes from './Routes';
+import {Link} from 'react-router-dom'
 
 const tabs = [
     {
@@ -24,9 +25,9 @@ export default function Home(){
     return (
         <div>
             <div className="uk-container uk-margin-top uk-margin-bottom">
-                <div className="uk-text-large uk-margin-bottom">
+                <Link to="/" className="uk-text-large uk-margin-bottom uk-link-muted">
                     MichaelDuo
-                </div>
+                </Link>
                 <Tab tabs={tabs}/>
                 <div className="uk-margin-top">
                     <Routes/>

@@ -33,7 +33,7 @@ function makeResourceReducer(resource){
             case CLEAR:
                 return {...defaultResourceState}
             default:
-                return {...defaultResourceState}
+                return state
         }
     }
 }
