@@ -29,9 +29,11 @@ export default function Home({history}){
     return (
         <div>
             <div className="uk-container uk-margin-top uk-margin-bottom">
-                <Link to="/" className="uk-text-large uk-margin-bottom uk-link-muted">
-                    MichaelDuo
-                </Link>
+                <div className="uk-margin-small-bottom">
+                    <Link to="/" className="uk-text-large uk-link-muted">
+                        MichaelDuo
+                    </Link>
+                </div>
                 <Tab tabs={tabs} selected={selected} onSelect={(index)=>{history.push(tabs[index].url)}}/>
                 <div className="uk-margin-top">
                     <Routes/>
