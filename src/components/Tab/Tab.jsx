@@ -1,27 +1,27 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
-import {withRouter} from 'react-router'
 
 class Tab extends PureComponent {
     render(){
-        const {tabs, onSelect, history} = this.props
-        const path = history.location.pathname
-        const activeTabIndex = tabs.findIndex(tab=>path === tab.url)
-        const onTabClick = (index) => {
-            history.push(tabs[index].url)
-            onSelect(index)
-        }
+        const {tabs, onSelect, selected} = this.props
 
         const getTab = (tab, index) => {
             return (
-                <li onClick={() => onTabClick(index)} key={`${index}-${tab.id}`}>
-                    <a href="">{tab.name}</a>
+                <li 
+                    className={selected===index ? 'uk-active' : ''}
+                    onClick={e => {
+                        e.stopPropagation();
+                        onSelect(index)
+                    }} 
+                    key={`${index}-${tab.id}`}
+                >
+                    <a onClick={e=>e.preventDefault()}>{tab.name}</a>
                 </li>
             )
         }
     
         return (
-            <div uk-tab={`active: ${activeTabIndex}`} className="uk-flex-right">
+            <div className="uk-tab uk-flex-right">
                 {tabs.map((tab, index)=>getTab(tab, index))}
             </div>
         )
@@ -31,13 +31,13 @@ class Tab extends PureComponent {
 Tab.propTypes = {
     tabs: PropTypes.array,
     onSelect: PropTypes.func,
-    history: PropTypes.object.isRequired,
-    match: PropTypes.object.isRequired,
+    selected: PropTypes.number,
 }
 
 Tab.defaultProps = {
     tabs: [],
-    onSelect: function(){}
+    onSelect: function(){},
+    selected: 0
 }
 
-export default withRouter(Tab)
+export default Tab

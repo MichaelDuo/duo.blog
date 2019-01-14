@@ -2,6 +2,7 @@ import React from 'react';
 import Tab from 'components/Tab';
 import Routes from './Routes';
 import {Link} from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 const tabs = [
     {
@@ -21,18 +22,25 @@ const tabs = [
     }
 ]
 
-export default function Home(){
+export default function Home({history}){
+    const {pathname} = history.location
+    let selected = tabs.findIndex(tab => tab.url === pathname)
+    selected = selected < 0 ? 0 : selected
     return (
         <div>
             <div className="uk-container uk-margin-top uk-margin-bottom">
                 <Link to="/" className="uk-text-large uk-margin-bottom uk-link-muted">
                     MichaelDuo
                 </Link>
-                <Tab tabs={tabs}/>
+                <Tab tabs={tabs} selected={selected} onSelect={(index)=>{history.push(tabs[index].url)}}/>
                 <div className="uk-margin-top">
                     <Routes/>
                 </div>
             </div>
         </div>
     )
+}
+
+Home.propTypes = {
+    history: PropTypes.object.isRequired
 }
