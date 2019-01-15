@@ -3,7 +3,7 @@ import './styles/App.css';
 import Pages from 'pages'
 import { HashRouter as Router } from 'react-router-dom'
 import {connect} from 'react-redux'
-import {loadBlogs} from 'actions/blogs'
+import {loadBlogs} from 'actions/thunks/blogs'
 import PropTypes from 'prop-types'
 
 const mapDispatchToProps = {

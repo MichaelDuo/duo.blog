@@ -1,7 +1,7 @@
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router'
 import {getResource, isResourceLoading} from 'selectors/resources'
-import {loadBlog} from 'actions/blog'
+import {loadBlog} from 'actions/thunks/blog'
 import {BLOG} from 'constants/resources'
 import Blog from './Blog'
 

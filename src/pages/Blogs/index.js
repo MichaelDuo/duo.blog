@@ -1,5 +1,5 @@
 import {connect} from 'react-redux'
-import {loadBlogs} from 'actions/blogs'
+import {loadBlogs} from 'actions/thunks/blogs'
 import {BLOGS} from 'constants/resources'
 import Blogs from './Blogs'
 import {getResource} from 'selectors/resources'
