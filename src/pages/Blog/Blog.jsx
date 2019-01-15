@@ -1,9 +1,6 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
-import showdown from 'showdown'
 import Spinner from 'components/Spinner'
-
-const converter = new showdown.Converter()
 
 export default class Blog extends PureComponent {
   static propTypes = {
@@ -27,13 +24,11 @@ export default class Blog extends PureComponent {
     if(loading){
       return <Spinner/>
     }
-    const {content} = blog
-    const contentHtml = converter.makeHtml(content)
     return (
       <div>
         <div 
           className="blog-post" 
-          dangerouslySetInnerHTML={{__html: contentHtml}}
+          dangerouslySetInnerHTML={{__html: blog.body}}
         />
       </div>
     )

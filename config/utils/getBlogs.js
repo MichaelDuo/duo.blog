@@ -3,6 +3,7 @@ const path = require('path')
 const paths = require('../paths')
 const showdown = require('showdown')
 const cheerio = require('cheerio')
+const fm = require('front-matter')
 const converter = new showdown.Converter()
 
 const blogsPath = path.resolve(paths.appPublic, 'blogs')
@@ -20,7 +21,9 @@ module.exports = function getBlogs(){
     }
     const blogs = blogFiles.map(filename => {
         const filePath = path.resolve(paths.appPublic, 'blogs', filename)
-        const $ = cheerio.load(converter.makeHtml(fs.readFileSync(filePath, 'utf-8')))
+        const fileData = fs.readFileSync(filePath, 'utf-8')
+        const {body} = fm(fileData)
+        const $ = cheerio.load(converter.makeHtml(body))
         const text = $('html').text()
         return {
             id: filename.slice(0, -3),
