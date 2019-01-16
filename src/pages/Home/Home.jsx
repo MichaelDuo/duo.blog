@@ -3,6 +3,7 @@ import Tab from 'components/Tab';
 import Routes from './Routes';
 import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
+import githubIcon from 'icons/github.svg'
 
 const tabs = [
     {
@@ -29,10 +30,13 @@ export default function Home({history}){
     return (
         <div>
             <div className="uk-container uk-margin-top uk-margin-bottom">
-                <div className="uk-margin-small-bottom">
+                <div className="uk-margin-small-bottom uk-flex uk-flex-between">
                     <Link to="/" className="uk-text-large uk-link-muted">
                         MichaelDuo
                     </Link>
+                    <a href="https://www.github.com/MichaelDuo" target="_blank" className="uk-link-muted">
+                        <img uk-svg="" alt="github" src={githubIcon} />
+                    </a>
                 </div>
                 <Tab tabs={tabs} selected={selected} onSelect={(index)=>{history.push(tabs[index].url)}}/>
                 <div className="uk-margin-top">
