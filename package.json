@@ -1,5 +1,5 @@
 {
-  "name": "duo.account.client",
+  "name": "duo.blog",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

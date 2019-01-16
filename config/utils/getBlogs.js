@@ -19,17 +19,20 @@ module.exports = function getBlogs(){
     } else {
         console.warn('Blogs directory is not found.')
     }
-    const blogs = blogFiles.map(filename => {
+    const blogs = blogFiles.map((filename, index) => {
         const filePath = path.resolve(paths.appPublic, 'blogs', filename)
         const fileData = fs.readFileSync(filePath, 'utf-8')
         const {body} = fm(fileData)
         const $ = cheerio.load(converter.makeHtml(body))
-        const text = $('html').text()
+        const titleEl = $($('h1,h2,h3')[0])
+        const title = titleEl.text()
+        titleEl.remove()
+        const content = $('html').text()
         return {
             id: filename.slice(0, -3),
-            title: filename,
+            title,
             url: path.resolve(paths.servedPath, 'blogs', filename),
-            preview: text.slice(0, 300)
+            preview: content.slice(0, 300)
         }
     })
     return blogs
