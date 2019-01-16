@@ -25,12 +25,7 @@ export default class Blog extends PureComponent {
       return <Spinner/>
     }
     return (
-      <div>
-        <div 
-          className="blog-post" 
-          dangerouslySetInnerHTML={{__html: blog.body}}
-        />
-      </div>
+      <div dangerouslySetInnerHTML={{__html: blog.html}} />
     )
   }
 }

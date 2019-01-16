@@ -34,7 +34,7 @@ export default function Home({history}){
                     <Link to="/" className="uk-text-large uk-link-muted">
                         MichaelDuo
                     </Link>
-                    <a href="https://www.github.com/MichaelDuo" target="_blank" className="uk-link-muted">
+                    <a href="https://www.github.com/MichaelDuo" target="_blank" rel="noopener noreferrer" className="uk-link-muted">
                         <img uk-svg="" alt="github" src={githubIcon} />
                     </a>
                 </div>

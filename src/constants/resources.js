@@ -10,3 +10,4 @@ const makeResource = resource => ({
 
 export const BLOGS = makeResource('BLOGS');
 export const BLOG = makeResource('BLOG');
+export const RESUME = makeResource('RESUME');
