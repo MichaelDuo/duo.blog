@@ -9,7 +9,7 @@ deploy:
   github-token: $GITHUB_TOKEN
   keep-history: true
   local-dir: ./build
-  repo: michaelduo.github.io
+  repo: MichaelDuo/michaelduo.github.io
   target-branch: master
   on:
     branch: master
