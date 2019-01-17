@@ -2,4 +2,12 @@ language: node_js
 script: 
   - npm run build
 deploy:
-  - node scripts/deploy
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  local-dir: ./build
+  repo: michaelduo.github.io
+  target-branch: master
+  on:
+    branch: master
