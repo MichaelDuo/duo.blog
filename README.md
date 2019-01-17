@@ -2,4 +2,4 @@
 
 [![Build Status](https://travis-ci.com/MichaelDuo/duo.blog.svg?branch=master)](https://travis-ci.com/MichaelDuo/duo.blog)
 
-Website: michaelduo.github.io
+Website: <https://michaelduo.github.io>
