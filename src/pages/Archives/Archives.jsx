@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const data = [
     {
@@ -44,6 +45,11 @@ function YearBlogs({year, blogs}){
             </ul>
         </div>
     )
+}
+
+YearBlogs.propTypes = {
+    year: PropTypes.number.isRequired,
+    blogs: PropTypes.array.isRequired
 }
 
 export default function Archives(){
