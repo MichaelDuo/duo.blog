@@ -13,9 +13,16 @@ function getBlogListItem(blog){
             </h3>
             <div className="uk-margin-left">
                 <div className="uk-margin-bottom">
-                    <Link to={blogUrl} className="uk-link-reset uk-text-muted">
-                        {blog.preview}
-                    </Link>
+                    <div className="uk-visible@m">
+                        <Link to={blogUrl} className="uk-link-reset uk-text-muted">
+                            {blog.preview.slice(0, 200)}...
+                        </Link>
+                    </div>
+                    <div className="uk-hidden@m">
+                        <Link to={blogUrl} className="uk-link-reset uk-text-muted">
+                            {blog.preview.slice(0, 100)}...
+                        </Link>
+                    </div>
                 </div>
                 <Link to={blogUrl}>Read more</Link>
             </div>
