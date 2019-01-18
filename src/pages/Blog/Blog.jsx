@@ -26,7 +26,6 @@ export default class Blog extends PureComponent {
     if(loading){
       return <Spinner/>
     }
-    console.log(blog.attributes)
     const date = dayjs(blog.attributes.date).format('MMM DD, YYYY')
     return (
       <div className="uk-animation-slide-bottom-small">
