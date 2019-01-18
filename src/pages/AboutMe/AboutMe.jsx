@@ -5,12 +5,13 @@ import Spinner from 'components/Spinner'
 export default class AboutMe extends PureComponent {
     static propTypes = {
         resume: PropTypes.object,
+        loading: PropTypes.bool,
         loadResume: PropTypes.func.isRequired,
-        loading: PropTypes.bool.isRequired,
     }
 
     static defaultProps = {
-        resume: { }
+        resume: { },
+        loading: true
     }
     
     componentDidMount(){

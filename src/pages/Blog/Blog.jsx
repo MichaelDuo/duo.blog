@@ -26,11 +26,15 @@ export default class Blog extends PureComponent {
     if(loading){
       return <Spinner/>
     }
+    console.log(blog.attributes)
     const date = dayjs(blog.attributes.date).format('MMM DD, YYYY')
     return (
-      <div>
+      <div className="uk-animation-slide-bottom-small">
         <h2 className="uk-heading">{blog.title}</h2>
-        <div className="uk-text-meta uk-margin">{date}</div>
+        <div className="uk-margin">
+          <span className="uk-text-meta uk-margin-small-right">{date}</span>
+          {blog.attributes.tags.map(tag=><a key="tag" className="uk-badge">#{tag}</a>)}
+        </div>
         <div className="blog" dangerouslySetInnerHTML={{__html: blog.html}} />
       </div>
     )
