@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 function getBlogListItem(blog){
     const blogUrl = `/blog/${blog.id}`
     return (
-        <div className="uk-margin-top uk-animation-slide-top-small" key={blog.id}>
+        <div className="uk-margin-top" key={blog.id}>
             <h3 className="uk-heading-bullet">
                 <Link to={blogUrl} className="uk-link-text">
                     {blog.title}

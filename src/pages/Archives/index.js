@@ -1,9 +1,10 @@
 import {connect} from 'react-redux'
 import Archives from './Archives'
+import getArchives from 'selectors/getArchives'
 
 const mapStateToProps = (state) => {
   return {
-    blogsByYear: []
+    archives: getArchives(state)
   }
 }
 

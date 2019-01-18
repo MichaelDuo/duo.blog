@@ -15,7 +15,7 @@ export default class Blogs extends PureComponent {
     render(){
         const {blogs} = this.props
         return (
-            <div>
+            <div className="uk-animation-slide-top-small">
                 <BlogList blogs={blogs}/>
             </div>
         )

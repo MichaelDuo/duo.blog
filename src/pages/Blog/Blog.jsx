@@ -2,6 +2,7 @@ import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import Spinner from 'components/Spinner'
 import dayjs from 'dayjs'
+import {get} from 'lodash'
 
 export default class Blog extends PureComponent {
   static propTypes = {
@@ -32,7 +33,7 @@ export default class Blog extends PureComponent {
         <h2 className="uk-heading">{blog.title}</h2>
         <div className="uk-margin">
           <span className="uk-text-meta uk-margin-small-right">{date}</span>
-          {blog.attributes.tags.map(tag=><a key="tag" className="uk-badge">#{tag}</a>)}
+          {get(blog, 'attributes.tags', []).map(tag=><a key="tag" className="uk-badge">#{tag}</a>)}
         </div>
         <div className="blog" dangerouslySetInnerHTML={{__html: blog.html}} />
       </div>

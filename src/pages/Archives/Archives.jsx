@@ -1,32 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-const data = [
-    {
-        year: 2019,
-        blogs: [
-            { title: 'Blog' },
-            { title: 'Blog' },
-            { title: 'Blog' }
-        ]
-    },
-    {
-        year: 2018,
-        blogs: [
-            { title: 'Blog' },
-            { title: 'Blog' },
-            { title: 'Blog' }
-        ]
-    },
-    {
-        year: 2017,
-        blogs: [
-            { title: 'Blog' },
-            { title: 'Blog' },
-            { title: 'Blog' }
-        ]
-    }
-]
+import {Link} from 'react-router-dom'
 
 function YearBlogs({year, blogs}){
     return (
@@ -34,11 +8,11 @@ function YearBlogs({year, blogs}){
             <div className="uk-text-lead">
                 {year}
             </div>
-            <ul class="uk-list uk-list-bullet">
+            <ul className="uk-list uk-list-bullet">
                 {blogs.map(blog=>{
                     return (
-                        <li key={blog.title}>
-                            <a className="uk-link-heading">{blog.title}</a>
+                        <li key={blog.id}>
+                            <Link to={`/blog/${blog.id}`} className="uk-link-heading">{blog.title}</Link>
                         </li>
                     )
                 })}
@@ -48,14 +22,18 @@ function YearBlogs({year, blogs}){
 }
 
 YearBlogs.propTypes = {
-    year: PropTypes.number.isRequired,
+    year: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
     blogs: PropTypes.array.isRequired
 }
 
-export default function Archives(){
+export default function Archives({archives}){
     return (
-        <div>
-            {data.map(year=>YearBlogs(year))}
+        <div className="uk-animation-slide-top-small">
+            {archives.map(yearArchive=><YearBlogs key={yearArchive.year} year={yearArchive.year} blogs={yearArchive.blogs} />)}
         </div>
     )
+}
+
+Archives.propTypes = {
+    archives: PropTypes.array.isRequired
 }

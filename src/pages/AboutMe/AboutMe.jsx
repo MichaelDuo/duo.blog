@@ -23,7 +23,9 @@ export default class AboutMe extends PureComponent {
             return <Spinner/>
         }
         return (
-            <div dangerouslySetInnerHTML={{__html: resume.html}} />
+            <div className="uk-animation-slide-top-small">
+                <div dangerouslySetInnerHTML={{__html: resume.html}} />
+            </div>
         )
     }
 }

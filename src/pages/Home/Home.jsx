@@ -32,7 +32,7 @@ export default function Home({history}){
             <div className="uk-container uk-margin-top uk-margin-bottom">
                 <div className="uk-margin-small-bottom uk-flex uk-flex-between">
                     <Link to="/" className="uk-text-large uk-link-muted">
-                        MichaelDuo
+                        Yuxi Dong
                     </Link>
                     <a href="https://www.github.com/MichaelDuo" target="_blank" rel="noopener noreferrer" className="uk-link-muted">
                         <img uk-svg="" alt="github" src={githubIcon} />
