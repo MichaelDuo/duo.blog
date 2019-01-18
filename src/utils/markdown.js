@@ -1,12 +1,18 @@
-import showdown from 'showdown'
-import fm from 'front-matter'
-const converter = new showdown.Converter()
+const fm = require('front-matter')
+const marked = require('marked')
 
-export const convert = (markdown) => {
+exports.convert = (markdown) => {
   const {attributes, body} = fm(markdown)
+  let tokens = marked.lexer(body)
+  if(tokens.length===0) return { title: '', html: '', attributes}
+  let title = ''
+  if(tokens[0].type==='heading'){
+    title = tokens.shift().text
+  }
+  const html = marked.parser(tokens)
   return {
-    html: converter.makeHtml(body),
-    markdown,
+    title,
+    html,
     attributes
   }
 }

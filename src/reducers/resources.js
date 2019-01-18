@@ -11,8 +11,8 @@ function resourceReducers(resources){
 }
 
 const defaultResourceState = {
-    loading: false,
     updating: [],
+    loading: undefined,
     data: undefined
 }
 
