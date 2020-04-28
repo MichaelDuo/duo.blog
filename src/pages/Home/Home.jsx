@@ -17,9 +17,9 @@ const tabs = [
         url: '/archives'
     },
     {
-        id: 'aboutme',
-        name: 'About me',
-        url: '/aboutme'
+        id: 'resume',
+        name: 'Resume',
+        url: '/resume'
     }
 ]
 
