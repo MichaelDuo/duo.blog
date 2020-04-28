@@ -12,7 +12,7 @@ export default function Routes(){
           <Route path="/blogs" component={Blogs} />
           <Route path="/blog/:id" component={Blog} />
           <Route path="/archives" component={Archives} />
-          <Route path="/aboutme" component={AboutMe} />
+          <Route path="/resume" component={AboutMe} />
           <Route component={() => <Redirect to="/404" />} />
         </Switch>
     )
