@@ -15,14 +15,14 @@ Computer Science minor
 ## Work Experience
 **AfterShip - SaaS, #1 tracking solution for eCommerce** (Nov 2018 - Sep 2019)  
 *Frontend Team Lead, Full-Stack Developer*
-- Teammanagementof9engineersteam
-- Frontendarchitectureredesignwithresource-basedstoreforbetter
+- Team management of 9 engineers team
+- Frontend architecture redesign with resource-based store for better 
 maintainability and scalability
-- End-to-endtestfoundation,weusebehavior-drivendevelopment(BDD)as
+- End-to-end test foundation,we use behavior-driven development(BDD)as
 our development flow, our E2E test covers more than 90% features, the
 foundation makes developing these tests painless
-- IntroduceTypescripttoallJSprojects
-- OptimizeCI-CDflowforallfrontendprojects(multipleenvironment,code
+- Introduce Typescript to all JS projects
+- Optimize CI-CD flow for all frontend projects(multiple environment,code
 coverage report, E2E test fail video and screenshot, etc)
 
 **XMind - Most popular mind mapping software** (June 2017 - Nov 2018)  
@@ -85,6 +85,3 @@ Jest, Cucumber, Cypress, enzyme, mocha
 
 **Others:**  
 Agile Methodologies, Travis, CircleCI, GitlabCI, Jenkins, ESLint, Git
-
-### Summary
-I’m currently a first-year graduate student. After working in the industry for 3 years, coming back to school and have a clear target on what to learn is a good opportunity for me to grow both professionally and academically. I’m looking for a summer internship that’s related to my graduate courses in the field of data science. I’m also open to other opportunities I can grow and contribute.
