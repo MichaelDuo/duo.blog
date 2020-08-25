@@ -5,7 +5,7 @@ Email: <michaeldongyuxi@gmail.com>
 Phone: +1 805-276-9482  
 
 ## Education
-**University of California, Riverside** (Sep 2019 - Present, GPA: 3.88)  
+**University of California, Riverside** (Sep 2019 - Present, GPA: 3.92)  
 M.S.in Computer Engineering
 
 **University of Illinois at Urbana-Champaign** (Sep 2012 - May 2016)  
